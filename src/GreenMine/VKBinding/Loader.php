@@ -17,8 +17,7 @@ namespace GreenMine\VKBinding;
 
         private static $instance;
 
-        public function onEnable(): void
-        {
+        public function onEnable(): void {
             //CONNECT CONFIG
             $this->saveResource('config.json');
             $this->cfg = new Config($this->getDataFolder() . 'config.json', Config::JSON);
@@ -36,12 +35,11 @@ namespace GreenMine\VKBinding;
             $this->getLogger()->info('Load VKBinding');
         }
 
-	public static function getInstance(): API {
-		return self::$instance;
-	}
+        public static function getInstance(): API {
+            return self::$instance;
+        }
 
-        public function onJoin(PlayerJoinEvent $event)
-        {
+        public function onJoin(PlayerJoinEvent $event) : void{
             $player = $event->getPlayer();
             $name = $player->getName();
             $this->api->setPlayer($name);
@@ -50,8 +48,7 @@ namespace GreenMine\VKBinding;
             }
         }
 
-        public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
-        {
+        public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
             $this->api->setPlayer($sender->getName());
             switch ($command->getName()) {
                 case 'acceptbind':
@@ -78,8 +75,7 @@ namespace GreenMine\VKBinding;
                     return false;
             }
         }
-        public function onDisable(): void
-        {
+        public function onDisable(): void {
             $this->getLogger()->info('Unload VKBinding');
         }
     }
