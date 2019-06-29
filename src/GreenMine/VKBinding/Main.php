@@ -22,7 +22,6 @@ namespace GreenMine\VKBinding;
             $this->cfg = new Config($this->getDataFolder() . 'config.json', Config::JSON);
             $this->cfg->enableJsonOption(JSON_UNESCAPED_UNICODE);
             //LOAD CONFIG
-            //LOAD CONFIG
             $data = $this->cfg->get('dbInfo');
             //CONNECT API
             $connect = new \mysqli($data['host'], $data['username'], $data['password'], $data['dbname']);
