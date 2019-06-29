@@ -5,7 +5,7 @@ namespace GreenMine\VKBinding;
 
 
 use pocketmine\Player;
-use GreenMine\VKBinding\Main;
+use GreenMine\VKBinding\Loader;
 
 class API
 {
