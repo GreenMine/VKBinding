@@ -32,10 +32,10 @@ class API
         $this->connect->query("CREATE TABLE IF NOT EXISTS ".$this->TABLE);
     }
 
-    public function setPlayer($player): bool {
+    public function setPlayer($player): API {
         $this->player = $player;
         $this->dbinfo = $this->getInfo();
-        return true;
+        return $this;
     }
 
     public function createUser($vkid =0, $fname = '', $lname = '', $state = 0, $sub = 0) {
