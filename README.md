@@ -53,7 +53,7 @@ echo $api->getState();
  var_dump($api->isSubscribe());
 ```
  ### Примеры
- Приветсвутем зашедшего пользователя, если у него привязан аккаунт
+  - Приветсвутем зашедшего пользователя, если у него привязан аккаунт
  ```php
 public function join(PlayerJoinEvent $event) : void {
     $player = $event->getPlayer();
@@ -64,3 +64,5 @@ public function join(PlayerJoinEvent $event) : void {
     }
 }
 ```
+
+- Микроплагин который выдает итем за подписку на сообщество. [Тык](https://github.com/GreenMine/SubscribeReward)
